@@ -1,3 +1,4 @@
+/* CSS Variables */
 :root {
     --clr-green-200: hsl(148, 38%, 91%);
     --clr-green-600: hsl(169, 82%, 27%);
@@ -99,9 +100,44 @@ textarea {
     resize: none;
 }
 
-input:focus,
-textarea:focus {
+
+
+/* Custom focus style for .form-input only (no outline) */
+.form-input:focus,
+.form-input:focus-visible {
     border-color: var(--clr-green-600);
+    outline: none;
+}
+
+/* Add hover state for .form-input */
+.form-input:hover {
+    border-color: var(--clr-green-600);
+    cursor: pointer;
+}
+
+/* Error state overrides focus */
+
+.form-input--error {
+    border-color: var(--clr-red);
+}
+
+/* Error must override hover, focus, active */
+.form-input--error:hover,
+.form-input--error:focus,
+.form-input--error:focus-visible,
+.form-input--error:active {
+    border-color: var(--clr-red);
+    outline: none;
+}
+
+/* Minimal active state styles */
+
+.radio-option:active {
+    background-color: var(--clr-green-200);
+}
+
+.btn-submit:active {
+    background: hsl(169, 82%, 20%);
 }
 
 /* Error messages */
@@ -111,7 +147,8 @@ textarea:focus {
     display: none;
 }
 
-/* First Name validation (HTML + CSS only) */
+/* First Name validation (HTML + CSS only) - Commented out to allow JS control */
+/*
 input:invalid {
     border-color: var(--clr-red);
 }
@@ -119,6 +156,7 @@ input:invalid {
 input:invalid+.error-message {
     display: block;
 }
+*/
 
 /* Radio buttons (compact, pixel-perfect) */
 fieldset {
@@ -146,10 +184,38 @@ fieldset {
 .radio-option input {
     width: 1rem;
     height: 1rem;
+    accent-color: var(--clr-green-600);
 }
 
 .radio-option input:checked+span {
     font-weight: 700;
+}
+
+/* Focus style for radio option: border on whole option */
+.radio-option:has(input:focus-visible) {
+    border-color: var(--clr-green-600);
+    box-shadow: 0 0 0 2px var(--clr-green-200);
+}
+
+/* Checked state: green border and light green background */
+.radio-option:has(input:checked) {
+    border-color: var(--clr-green-600);
+    background-color: var(--clr-green-200);
+}
+
+/* Active state: light green background while clicking */
+.radio-option:active {
+    background-color: var(--clr-green-200);
+}
+
+.radio-option input[type="radio"],
+#consent-checkbox[type="checkbox"] {
+    accent-color: var(--clr-green-600);
+}
+
+.checkbox-group input:focus-visible {
+    outline: 2px solid var(--clr-green-600);
+    outline-offset: 3px;
 }
 
 /* Checkbox */
@@ -162,6 +228,7 @@ fieldset {
 .checkbox-group input {
     width: 1.25rem;
     height: 1.25rem;
+    background-color: red;
 }
 
 /* Submit button */
@@ -182,13 +249,24 @@ fieldset {
 }
 
 /* Success message */
+
 .success-message {
-    margin-top: var(--space-3);
-    background: var(--clr-green-600);
+    background: var(--clr-grey-900);
     color: var(--clr-white);
-    padding: var(--space-2);
+    padding: var(--space-3);
+    /* more breathing room */
     border-radius: var(--radius);
+
+    /* matches design */
     display: none;
+    width: 60%;
+    max-width: 460px;
+    margin: 2rem auto 0 auto;
+    margin-bottom: 0;
+}
+
+.success-message h2 {
+    margin-bottom: 0.5rem;
 }
 
 /* Desktop layout */
