@@ -54,7 +54,7 @@ h2 {
 .contact {
     background: var(--clr-white);
     padding: var(--space-3);
-    max-width: 700px;
+    max-width: 43.75rem;
     width: 100%;
     margin: auto;
     border-radius: var(--radius);
@@ -136,9 +136,7 @@ textarea {
 
 /* Minimal active state styles */
 
-.radio-option:active {
-    background-color: var(--clr-green-200);
-}
+
 
 .btn-submit:active {
     background: hsl(169, 82%, 20%);
@@ -185,6 +183,8 @@ fieldset {
     cursor: pointer;
 }
 
+
+
 .radio-option input {
     width: 1rem;
     height: 1rem;
@@ -212,8 +212,11 @@ fieldset {
     background-color: var(--clr-green-200);
 }
 
+
+
+
 .radio-option input[type="radio"],
-#consent-checkbox[type="checkbox"] {
+.form-checkbox {
     accent-color: var(--clr-green-600);
 }
 
@@ -245,7 +248,7 @@ fieldset {
     font-size: var(--fs-base);
     padding: 0.55rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+
 }
 
 .btn-submit:hover {
