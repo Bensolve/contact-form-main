@@ -270,34 +270,10 @@ fieldset {
     margin: 2rem auto 0;
 }
 
-.success-message h2::before {
-    content: '\2713';
-    color: var(--clr-white);
-
-    /* Reduced font-size so it fits inside the 20px circle */
-    font-size: 0.85rem;
-    font-weight: 700;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-
-    border: 1.5px solid #ffffff;
-    border-radius: 50%;
-
-    /* Safety for centering */
-    line-height: 0;
-    flex-shrink: 0;
-}
-
-.success-message h2 {
+.success-title {
     display: flex;
     align-items: center;
-    /* gap: 10px; */
+    gap: 0.455rem;
     margin-bottom: 1.5rem;
 }
 
