@@ -84,6 +84,10 @@ label {
     font-size: var(--fs-base);
 }
 
+.required {
+    color: var(--clr-green-600);
+}
+
 input,
 textarea {
     width: 100%;
